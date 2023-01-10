@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download PDF File on button click </title>
+    <link rel="stylesheet" href="/index.css">
+    <script src="https://kit.fontawesome.com/39534946cf.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/e0802bf516.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark-subtle">
+        <nav class="navbar mt-2 mb-4 bg-dark manual-color">
+            <div class="container-fluid">
+              <span class="my-1 h1">PDF Download</span>
+              <span class="px-1 py-3 h5">LearnWithKoushik</span>
+            </div>
+            <div class="container">
+                <span class="ml-2 h6">on Button Click</span>
+            </div>
+        </nav>
+        <div class="container text-center">
+            <div class="row mb-4">
+                <p id="content" class="col px-3 py-3 text-start content border border-dark-subtle">
+                    <span>Hey Folks,</span><br><br>
+                    <span class="h5">
+                        Do you find it difficult to optimize your portfolio display?<br>
+                        Do you find it irrelevant to have your bio-data on the portal , yet you wanted it have ?
+                    </span><br><br>
+                    <span class="lead">
+                        At times, we might require the functionality of downloading a pdf on button click.
+                        This blog takes you through the key concepts and approach required to obtain the required functionality.
+                    </span>
+                    
+                </p>
+            </div>
+
+            <div class="row py-2-">
+                <div class="col pt-4 fs-4"> Click the button on the right to download the PDF</div>
+                <button type="button" class="btn col"
+                id="GETFile"><img src="/Download-PDF-Button.png" alt="download_pdf_image" width = '300'>
+                </button>
+            </div>
+
+
+            <div class="row card mb-4 bg-primary-subtle">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">Code-Snippet</h3>
+                    <pre class="card-text">
+<strong>Add the following script from the source:</strong>
+                        https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js
+            
+     
+ <strong>and then add the following code under script:</strong>
+$('#GETFile').on('click', function(){
+$.ajax({
+                        url:'pdf_url',
+                        method:'GET',
+                                            xhrFields:{ responseType: 'blob'},
+                                  success: function(data){
+                                                        var a = document.createElement('a');
+                                                               var url = window.URL.createObjectURL(data);
+                                    a.href = url;
+                                            a.download = 'f.pdf';
+                                            document.body.append(a);
+                                a.click();
+                                a.remove();
+                                                    window.URL.revokeObjectURL(url)
+            }
+    });
+});
+                    </pre>
+                </div>
+            </div>
+
+           
+
+            <div class="row mb-2 bg-dark manual-color">
+                <div class="col px-3 py-4 h5"> LearnWithKoushik</div>
+                <!-- <div class="col"> Learn with koushik</div> -->
+                <div class = "col social-container py-4">
+                    <a  class ="social"  href = "https://www.facebook.com/koushik.gara.7/"   target = "blank"><i class="fa fa-facebook"></i></a>
+                    <a  class = "social" href = "https://www.instagram.com/__koushik__2806/" target = "blank"><i class="fab fa fa-instagram"></i></a>
+                    <a  class = "social" href = "https://www.youtube.com/"   target = "blank"><i class="fa fa-youtube-play"></i></a>
+                    <a  class = "social" href = "https://www.linkedin.com/in/koushik-gara-159ab3260/"  target = "blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                </div>
+                <address id="contact" class="col py-2 px-2">
+                        Koushik Gara<br>
+                        Senior at Bits-Pilani Hyderabad<br>
+                        +91 9390093095
+                </address>
+                
+            </div>
+
+        </div>
+       
+    </div>
+   
+   
+    
+
+    
+     <!-- try to insert the following :
+
+     1.pop-overs
+     2.use scrollspy at bookbin
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    </script>
+    <script>
+        $('#GETFile').on('click', function(){
+            $.ajax({
+
+                url:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/172905/test.pdf',
+                method:'GET',
+                xhrFields:{
+                    responseType: 'blob'
+                },
+                success: function(data){
+                    var a = document.createElement('a');
+                    var url = window.URL.createObjectURL(data);
+                    a.href = url;
+                    a.download = 'f.pdf';
+                    document.body.append(a);
+                    a.click();
+                    a.remove();
+                    window.URL.revokeObjectURL(url)
+                }
+
+            });
+        });
+    </script>
+
+
+</body>
+</html>

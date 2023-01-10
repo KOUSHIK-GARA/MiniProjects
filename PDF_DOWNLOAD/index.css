@@ -1,0 +1,39 @@
+
+.content{
+    font-size:20px;
+}
+
+.manual-color{
+    color:#fff;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+.social-container a {
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	/* margin: 0 5px;*/
+	height: 40px;
+	width: 40px; 
+    color:#fff;
+}
+
+.social
+{
+    border: 2px solid white;
+    padding : 4px;
+}
+ 
+.social:hover
+{
+    color:#2c3e50;
+    background: #fff;
+}
