@@ -1,27 +1,87 @@
-
-.content{
-    font-size:20px;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+body{
+    font-family: 'Lato', sans-serif;
 }
 
-.manual-color{
+
+.nav, .footer{
+    background-color: darkcyan;
+    font-size: 20px;
+}
+
+.nav a{
     color:#fff;
 }
 
-a{
-    text-decoration: none;
+.nav-link:hover{
+    background-color: sandybrown;
+    color:#fff;
 }
 
-nav a{
-    text-decoration: none;
+.topic{
+    color:darkred
 }
+
+.content-text{
+    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.questions{
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:deeppink
+}
+.card-body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.card-text{
+    color:royalblue
+}
+
+
+
+
+.about{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+hr{
+    width: 10%;
+    height: 2px;
+    background-color: black;
+    line-height: 90px;
+}
+
+.about-design{
+    display:flex;
+    justify-content: center;
+}
+
+.name{
+    color:darkviolet;
+    font-size: 18px;
+}
+
+.white{
+    color:#fff;
+}
+
+.emoji{
+    font-size: 25px;
+}
+
+
+/*social media icons */
+
 
 .social-container a {
+    text-decoration: none;
 	border-radius: 50%;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	/* margin: 0 5px;*/
-	height: 40px;
+	margin: 0 5px;
+	 height: 40px;
 	width: 40px; 
     color:#fff;
 }
@@ -29,7 +89,7 @@ nav a{
 .social
 {
     border: 2px solid white;
-    padding : 4px;
+    padding : 3px;
 }
  
 .social:hover

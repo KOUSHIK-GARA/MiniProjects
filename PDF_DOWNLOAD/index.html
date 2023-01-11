@@ -4,99 +4,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download PDF File on button click </title>
+    <title>Download PDF </title>
+    <link  rel = "shortcut icon"  href="Favicon.ico" />
     <link rel="stylesheet" href="/index.css">
     <script src="https://kit.fontawesome.com/39534946cf.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/e0802bf516.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+     <!-- font styles -->
+     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-fluid bg-dark-subtle">
-        <nav class="navbar mt-2 mb-4 bg-dark manual-color">
-            <div class="container-fluid">
-              <span class="my-1 h1">PDF Download</span>
-              <span class="px-1 py-3 h5">LearnWithKoushik</span>
+    <div class="container bg-light-subtle">
+        <!-- Navbar -->
+        <div class="row py-3 mb-2">
+            <div class="col">
+                <nav class="nav justify-content-start">
+                    <li class="nav-item">
+                        <a href="#content" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </nav>
             </div>
-            <div class="container">
-                <span class="ml-2 h6">on Button Click</span>
-            </div>
-        </nav>
-        <div class="container text-center">
-            <div class="row mb-4">
-                <p id="content" class="col px-3 py-3 text-start content border border-dark-subtle">
-                    <span>Hey Folks,</span><br><br>
-                    <span class="h5">
+        </div>
+        <!-- Topic -->
+        <div class="row py-3 mb-2 border border-subtle-dark">
+            <div id="content" class="col">
+                <h1 class="text-center topic">PDF Download</h1>
+                <p>
+                    <span class="fs-1 content-text">Hey Folks,</span><br><br>
+                    <span class="fs-3 questions">
                         Do you find it difficult to optimize your portfolio display?<br>
                         Do you find it irrelevant to have your bio-data on the portal , yet you wanted it have ?
                     </span><br><br>
-                    <span class="lead">
+                    <span class="content-text fs-5">
                         At times, we might require the functionality of downloading a pdf on button click.
                         This blog takes you through the key concepts and approach required to obtain the required functionality.
                     </span>
-                    
                 </p>
             </div>
-
-            <div class="row py-2-">
-                <div class="col pt-4 fs-4"> Click the button on the right to download the PDF</div>
-                <button type="button" class="btn col"
-                id="GETFile"><img src="/Download-PDF-Button.png" alt="download_pdf_image" width = '300'>
-                </button>
-            </div>
-
-
-            <div class="row card mb-4 bg-primary-subtle">
-                <div class="card-body">
-                    <h3 class="card-title mb-4">Code-Snippet</h3>
-                    <pre class="card-text">
-<strong>Add the following script from the source:</strong>
-                        https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js
-            
-     
- <strong>and then add the following code under script:</strong>
-$('#GETFile').on('click', function(){
-$.ajax({
-                        url:'pdf_url',
-                        method:'GET',
-                                            xhrFields:{ responseType: 'blob'},
-                                  success: function(data){
-                                                        var a = document.createElement('a');
-                                                               var url = window.URL.createObjectURL(data);
-                                    a.href = url;
-                                            a.download = 'f.pdf';
-                                            document.body.append(a);
-                                a.click();
-                                a.remove();
-                                                    window.URL.revokeObjectURL(url)
-            }
-    });
-});
-                    </pre>
-                </div>
-            </div>
-
-           
-
-            <div class="row mb-2 bg-dark manual-color">
-                <div class="col px-3 py-4 h5"> LearnWithKoushik</div>
-                <!-- <div class="col"> Learn with koushik</div> -->
-                <div class = "col social-container py-4">
-                    <a  class ="social"  href = "https://www.facebook.com/koushik.gara.7/"   target = "blank"><i class="fa fa-facebook"></i></a>
-                    <a  class = "social" href = "https://www.instagram.com/__koushik__2806/" target = "blank"><i class="fab fa fa-instagram"></i></a>
-                    <a  class = "social" href = "https://www.youtube.com/"   target = "blank"><i class="fa fa-youtube-play"></i></a>
-                    <a  class = "social" href = "https://www.linkedin.com/in/koushik-gara-159ab3260/"  target = "blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                </div>
-                <address id="contact" class="col py-2 px-2">
-                        Koushik Gara<br>
-                        Senior at Bits-Pilani Hyderabad<br>
-                        +91 9390093095
-                </address>
-                
-            </div>
-
         </div>
-       
+        <!-- Demo -->
+        <div class="row py-3 mb-2">
+            <div class="col pt-4 text-center fs-4"> Click the button  to download the PDF</div>
+            <button type="button" class="btn col"
+            id="GETFile"><img src="/Download-PDF-Button.png" alt="download_pdf_image" width = '300'>
+            </button>
+        </div>
+        <!-- Code -->
+        <div class="row card mb-2 bg-danger-subtle">
+            <div  class="card-body">
+                <h3 class="card-title p-4 text-center">Code-Snippet</h3>
+                <p class="card-text">Add the following script: </p>
+                <p class=" px-3"> https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js</p>
+                <p class="card-text">and then add the following code : </p>
+                <pre>
+                    <code class="language-javascript">
+                        $('#GETFile').on('click', function(){
+                            $.ajax({
+                                 url:'pdf_url',
+                                method:'GET',
+                                xhrFields:{ responseType: 'blob'},
+                                success: function(data){
+                                    var a = document.createElement('a');
+                                    var url = window.URL.createObjectURL(data);
+                                    a.href = url;
+                                    a.download = 'f.pdf';
+                                    document.body.append(a);
+                                    a.click();
+                                    a.remove();
+                                    window.URL.revokeObjectURL(url)
+                                }
+                             });
+                        });
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <!-- About Me -->
+        <div id="about" class="row py-3 mb-2 bg-primary-subtle">
+            <h2 class="text-center p-1">About Me</h2>
+            <div class="about-design">
+                <hr>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <hr>
+            </div>
+          
+            <div class="col-9 about">
+                <p class="Lead">
+                   <span class="fs6"><strong>Hey Developers!</strong></span>  
+                </p>
+                <p>
+                    Myself <b class="name">KOUSHIK</b> currently pursuing my B.E from Bits-Pilani Hyderabad Campus, So techincally i'm a Bitsian.I am majoring in Electrical and Electronics Engineering. I am from Srikakulam of AndhraPradesh. I completed my 10th at Srikakulam and 12th from Vishakaptanam. Yes, I am a Narayana product in every sense <span class="emoji">&#9995;</span><span class="emoji">&#128514;</span>;  i wanna be a Full Stack Web-Developer in the process of being so, I prefer to get hands-on while learning skills; i mostly code in Angular and Java, You can always visit my work from <a href="https://github.com/KoushikGara" target="_blank">Github</a>.  I recently completed an internship at <a href="https://www.biz2credit.com/" target="_blank">Biz2Credit</a>, It's a full stack developement role where i worked on  a project RuleEngine where i have obtained a lot of industry exposure. As of now i'm in my final semester  of my graduation and mercifully i have a PPO (from <b class="name">Biz2Credit</b>) so, i am touching my basics in this available recess, I'm starting with UI the technologies i'm gonna use  Html, Bootstrap, JS for creating these mini web-pages and later i would like to use frameworks like Angular and then think about the backend.That's the techinical side of me <span class="emoji">&#128524;</span>
+                    
+                    
+                    <br><br><br><br>
+                     And i'm a movie <span class="emoji">&#127916;</span> buff  i watch a lot of Indian Cinema(Mostly Telugu) & very much updated about the Cinema Content , i tend to find people who loves to discuss cinema, you guys can <a href="#connect">connect</a> with me on a  weekend. I watch cricket on a regular basis being a MSD fan <span class="emoji">&#128526;</span> and i  Occasionally play badminton ( & pls don't approach for this <span class="emoji">&#128517;</span>).
+                     That's much about me ... It's time to give it back mamie! Learn-Code-Execute.
+                </p>
+            </div>
+            <div class="col">
+                <img src="/Profile.jpeg" class="py-2"  alt="Profile_Img" width="250">
+            </div>
+        </div>
+        <!-- Contact -->
+        <div id="contact"  class="row  py-2 mb-3 footer white">
+            <div class="col-4 py-4 h4">LearnCodeExecute</div>
+            <div class = "col-5 py-4 social-container">
+                <a  class ="social"  href = "https://www.facebook.com/koushik.gara.7/"   target = "blank"><i class="fa fa-facebook"></i></a>
+                <a  class = "social" href = "https://www.instagram.com/__koushik__2806/" target = "blank"><i class="fab fa fa-instagram"></i></a>
+                <a  class = "social" href = "https://www.youtube.com/"   target = "blank"><i class="fa fa-youtube-play"></i></a>
+                <a  class = "social" href = "https://www.linkedin.com/in/koushik-gara-159ab3260/"  target = "blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-3">
+                <address>
+                    Koushik Gara<br>
+                    Senior at Bits-Pilani Hyderabad<br>
+                    +91 9390093095
+                </address>
+            </div>
+           
+        </div>
     </div>
    
    
